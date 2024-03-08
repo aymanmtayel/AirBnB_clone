@@ -3,24 +3,17 @@
 import cmd
 import shlex
 
-class HelloWorld(cmd.Cmd):
-    """simple console11111"""
+class AirBnb(cmd.Cmd):
+    """simple Airbnb clone console"""
 
-    calls = ["ayman", "Mahmoud", "Tayel"]
-    prompt = "python is fun: "
-    intro = "Simple console"
+    prompt = "(hbnb) "
 
-    def do_greet(self, person):
+    def do_quit(self, person):
+        """quit the console"""
+        return True
+
+    def do_greet(self, line):
         """A function to greet a person"""
-
-        names = person.split(" ")
-        for name in names:
-            if name == " ":
-                continue
-            if name:
-                print("hi", name)
-
-    def do_greet2(self, line):
         names = shlex.split(line)
         for name in names:
             print("hi", name)
@@ -42,8 +35,8 @@ class HelloWorld(cmd.Cmd):
 
 if __name__ == '__main__':
     import sys
-
+    
     if len(sys.argv) > 1:
-        HelloWorld().onecmd(' '.join(sys.argv[1:]))
+        AirBnb().onecmd(' '.join(sys.argv[1:]))
     else:
-        HelloWorld().cmdloop()
+        AirBnb().cmdloop()
