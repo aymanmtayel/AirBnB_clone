@@ -11,4 +11,5 @@ header {
     background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-position: 20px center;
+    margin-top: 5px;
 }
